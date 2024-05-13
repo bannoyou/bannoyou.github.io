@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>電卓</title>
+<style>
+  body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .calculator-container {
+    margin: 50px auto;
+    width: 320px;
+    border: 2px solid black; /* ボーダーの追加 */
+    border-radius: 10px; /* ボーダーの角を丸くする */
+    padding: 10px; /* ボーダー内の余白を追加 */
+  }
+  .calculator {
+    width: 100%;
+  }
+  .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #808080;
+    color: white;
+    margin: 5px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .button.orange {
+    background-color: orange; /* オレンジ色に変更 */
+  }
+</style>
+</head>
+<body>
+<div class="calculator-container">
+  <input type="text" class="calculator" id="result" readonly>
+  <br>
+  <button class="button" onclick="clearResult()">AC</button>
+  <button class="button" onclick="changeSign()">+/-</button>
+  <button class="button" onclick="appendToResult('%')">%</button>
+  <button class="button orange" onclick="appendToResult('/')">/</button>
+  <br>
+  <button class="button" onclick="appendToResult('7')">7</button>
+  <button class="button" onclick="appendToResult('8')">8</button>
+  <button class="button" onclick="appendToResult('9')">9</button>
+  <button class="button orange" onclick="appendToResult('*')">*</button>
+  <br>
+  <button class="button" onclick="appendToResult('4')">4</button>
+  <button class="button" onclick="appendToResult('5')">5</button>
+  <button class="button" onclick="appendToResult('6')">6</button>
+  <button class="button orange" onclick="appendToResult('-')">-</button>
+  <br>
+  <button class="button" onclick="appendToResult('1')">1</button>
+  <button class="button" onclick="appendToResult('2')">2</button>
+  <button class="button" onclick="appendToResult('3')">3</button>
+  <button class="button orange" onclick="appendToResult('+')">+</button>
+  <br>
+  <button class="button" onclick="appendToResult('0')">0</button>
+  <button class="button" onclick="appendToResult('.')">.</button>
+  <button class="button orange" onclick="calculate()">=</button>
+</div>
+
+<script>
+  let currentResult = "";
+
+  function appendToResult(value) {
+    currentResult += value;
+    document.getElementById("result").value = currentResult;
+  }
+
+  function clearResult() {
+    currentResult = "";
+    document.getElementById("result").value = "";
+  }
+
+  function changeSign() {
+    if (currentResult !== "" && currentResult !== "-") {
+      if (currentResult.charAt(0) === "-") {
+        currentResult = currentResult.slice(1);
+      } else {
+        currentResult = "-" + currentResult;
+      }
+      document.getElementById("result").value = currentResult;
+    }
+  }
+
+  function calculate() {
+    try {
+      currentResult = eval(currentResult);
+      document.getElementById("result").value = currentResult;
+    } catch(error) {
+      document.getElementById("result").value = "Error";
+    }
+  }
+</script>
+</body>
+</html>
