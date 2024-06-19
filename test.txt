@@ -1,4 +1,24 @@
 hello world
+<<<<<<< HEAD
 changed
 
-branch yeah!
+=======
+Bye world
+hatanaka is GOD
+＼(^o^)／
+＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／＼(^o^)／
+鹿せんべいって美味しいよね
+鹿せんべい定食
+奈良の鹿の悩み
+熱燗ガブガブ
+今日部長会議です！！！！！！！！！！！！！！！！！！！！！
+中身がemptyの部長会議
+中身がnullの部長会議
+(´・ω・`)
+Mrs.Hatanaka looks kind.
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+よろしく！
+AAAAAAAAA.TarKy
+>>>>>>> 0403dc5f07042758180b554324f61ed71d7d811c
+ aiueo
+
